@@ -1894,6 +1894,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   created: function created() {
     this.fetchTasks();
@@ -37298,44 +37302,48 @@ var render = function() {
         }
       },
       [
-        _c("div", { staticClass: "form-group" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.task.name,
-                expression: "task.name"
-              }
-            ],
-            staticClass: "form-control",
-            attrs: { type: "text", name: "name" },
-            domProps: { value: _vm.task.name },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+        _c("div", { staticClass: "row my-5" }, [
+          _c("div", { staticClass: "form-group col-md-10" }, [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.task.name,
+                  expression: "task.name"
                 }
-                _vm.$set(_vm.task, "name", $event.target.value)
+              ],
+              staticClass: "form-control",
+              attrs: { type: "text", name: "name", autocomplete: "off" },
+              domProps: { value: _vm.task.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.$set(_vm.task, "name", $event.target.value)
+                }
               }
-            }
-          })
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
+            })
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
       ]
     ),
     _vm._v(" "),
-    _c("h1", [_vm._v("Things to do:")]),
+    _c("h3", { staticClass: "text-center mb-3" }, [_vm._v("Things to do:")]),
     _vm._v(" "),
     _c(
       "ul",
       { staticClass: "list-group" },
       [
         _vm.tasks.length === 0
-          ? _c("li", { staticClass: "list-group-item" }, [
-              _vm._v("There are no tasks yet.")
-            ])
+          ? _c(
+              "li",
+              { staticClass: "list-group-item text-center font-weight-bold" },
+              [_vm._v("There are no tasks yet!")]
+            )
           : _vm._e(),
         _vm._v(" "),
         _vm._l(_vm.tasks, function(task, index) {
@@ -37365,7 +37373,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
+    return _c("div", { staticClass: "form-group col-md-2" }, [
       _c("button", { staticClass: "btn btn-primary form-control" }, [
         _vm._v("Add")
       ])

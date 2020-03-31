@@ -35,7 +35,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        $task = Task::create($request->all());
+        $task = Task::create($request->except('_token',));
 
         return response()->json([
             'task' => $task,
@@ -85,8 +85,8 @@ class TaskController extends Controller
     public function destroy($id)
     {
         $task = Task::findOrFail($id);
-
         $task->delete();
+        
         return 204;
     }
 

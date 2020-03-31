@@ -15,8 +15,8 @@
 	</style>
 </head>
 <body>
-	<div class="container" id="app">
-		<h1>Hello, World! Welcome to Taskmaster</h1>
+	<div class="container mt-5" id="app">
+		<h1 class="font-weight-bold text-center">Welcome to Taskmaster!</h1>
 		<task-list></task-list>
 
 		<footer>
